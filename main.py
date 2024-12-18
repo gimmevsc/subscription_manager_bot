@@ -7,16 +7,19 @@ from threading import Thread
 from util.gdrive_backup import *
 from flask import Flask, request, jsonify
 import stripe
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GROUP_CHAT_ID = os.getenv("PRIVATE_CHAT_ID")
+PAYMENT_PROVIDER_TOKEN = os.getenv("PAYMENT_PROVIDER_TOKEN")
+stripe.api_key = os.getenv("STRIPE_API_KEY")
+WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
 
 
-bot = telebot.TeleBot('BOT_TOKEN')
-
-GROUP_CHAT_ID = '...'
-
-PAYMENT_PROVIDER_TOKEN = '...'
-
-stripe.api_key = "..."
-WEBHOOK_SECRET = "..."
+bot = telebot.TeleBot(BOT_TOKEN)
 
 app = Flask(__name__)
 
