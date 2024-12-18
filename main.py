@@ -9,6 +9,7 @@ from flask import Flask, request, jsonify
 import stripe
 from dotenv import load_dotenv
 import os
+from util.plans import sub_p
 
 load_dotenv()
 
@@ -42,29 +43,6 @@ create_database()
 replacing_thread = Thread(target=replace_list_db_on_google_drive)
 replacing_thread.start()
 
-
-subscription_plans = {
-    '1 Day - 1€': {
-        'stripe_price_id': 'price_id',
-        'duration': 1,
-        'plan_name': '1 Day'
-    },
-    '1 Month - 5€': {
-        'stripe_price_id': 'price_id',
-        'duration': 30,
-        'plan_name': '1 Month'
-    },
-    '3 Months - 14€': {
-        'stripe_price_id': 'price_id',
-        'duration': 90,
-        'plan_name': '3 Months'
-    },
-    '1 Year - 49€': {
-        'stripe_price_id': 'price_id',
-        'duration': 365,
-        'plan_name': '1 Year'
-    }
-}
 
 # Handler to ignore messages in groups
 @bot.message_handler(func=lambda message: message.chat.type in ['group', 'supergroup'])
