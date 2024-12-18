@@ -5,8 +5,10 @@ import time
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton 
 import stripe
+from dotenv import load_dotenv
+import os
 
-db_path = 'database/list.db'
+db_path = os.getenv("DATABASE_PATH")
 
 def create_database():
     conn = sqlite3.connect(db_path)
