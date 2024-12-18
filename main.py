@@ -9,7 +9,7 @@ from flask import Flask, request, jsonify
 import stripe
 from dotenv import load_dotenv
 import os
-from util.plans import sub_p
+from util.plans import subscription_plans
 
 load_dotenv()
 
