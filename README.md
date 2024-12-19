@@ -1,4 +1,7 @@
 ## Telegram Subscription Bot
+
+##@trusov_vip_bot Telegram Bot
+
 #### This project is a Python Telegram Bot for managing subscription-based access to a private Telegram channel. It integrates with Stripe for payments and Google Drive for database backups.
 
 ### Setup
