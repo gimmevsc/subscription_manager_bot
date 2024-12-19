@@ -11,23 +11,15 @@ git clone https://github.com/gimmevsc/subscription_manager_bot.git
 cd <repository-folder>
 ```
 
-
 #### 2. Install Dependencies
 ````bash
 pip install -r requirements.txt
 ````
 
-#### 3. Create the .env File
-Create a .env file in the project root directory to store sensitive credentials. Use the .env_example as a template:
-
-.env:
-```plaintext
-TELEGRAM_BOT_TOKEN=your-telegram-bot-token
-PRIVATE_CHAT_ID=your-group-chat-id
-STRIPE_API_KEY=your-stripe-api-key
-PAYMENT_PROVIDER_TOKEN=your-payment-provider-token
-WEBHOOK_SECRET=your-stripe-webhook-secret
-DATABASE_PATH=your-database-file-path.db
+#### 3. Set Up Environment Variables
+Create a .env file in the project root by copying .env.example:
+```bash
+cp .env.example .env
 ```
 
 #### 4. Set Up Google Drive Credentials
